@@ -31,9 +31,12 @@ public class Main {
         massiveOne[1] = 2;
         massiveOne[2] = 3;
 
-        float[] masiveTwo = {1.57f, 7.654f, 9.986f};
+        double[] masiveTwo = new double[]{1.57, 7.654, 9.986};
 
         boolean[] massivethree = new boolean[5];
+
+        char[] arr3 = new char[]{72, 73, 74, 'a', 'S'}; //символьный массив HIJ (ASCII "American standard code for information interchange" гуглить)
+        System.out.println(arr3);
     }
 
     public static void task2() {
@@ -46,19 +49,36 @@ public class Main {
         //    - В консоль выведены все элементы второго массива в верном порядке через запятую
         //    - В консоль выведены все элементы третьего массива в верном порядке через запятую
         //    - На одной строчке расположены элементы только одного массива
-        int[] massiveOne = new int[12];
-        massiveOne[0] = 1;
-        massiveOne[1] = 2;
-        massiveOne[2] = 3;
-        System.out.println(massiveOne[0] + ", " + massiveOne[1] + ", " + massiveOne[2]);
+        int[] massiveOne = new int[]{1, 2, 3, 4, 5, 6};
+        for (int i = 0; i < massiveOne.length; i++) { // цикл выводит все значения массива начиная с 0 и далее
+            if (i == massiveOne.length - 1) {
+                System.out.println(massiveOne[i]);
+            } else {
+                System.out.print(massiveOne[i] + ", ");
+            }
+
+        }
 
         float[] masiveTwo = {1.57f, 7.654f, 9.986f};
-        System.out.println(masiveTwo[0] + ", " + masiveTwo[1] + ", " + masiveTwo[2]);
+        for (int i = 0; i < masiveTwo.length; i++) {
+            if (i == masiveTwo.length - 1) {
+                System.out.println(masiveTwo[i]);
+            } else {
+                System.out.print(masiveTwo[i] + ", ");
+            }
+
+        }
 
         boolean[] massivethree = new boolean[5];
         massivethree[0] = true;
         massivethree[3] = false;
-        System.out.println(massivethree[0] + ", " + massivethree[1] + ", " + massivethree[2]);
+        for (int i = 0; i < massivethree.length; i++) {
+            if (i == massivethree.length - 1) {
+                System.out.println(massivethree[i]);
+            } else {
+                System.out.print(massivethree[i] + ", ");
+            }
+        }
     }
 
     public static void task3() {
@@ -74,51 +94,55 @@ public class Main {
         //3, 2, 1
         //9.986, 7.654, 1.57
         //*произвольные элементы третьего массива в обратном порядке*
-        int[] massiveOne = new int[12];
-        massiveOne[0] = 1;
-        massiveOne[1] = 2;
-        massiveOne[2] = 3;
-        int a = massiveOne[0];
-        int b = massiveOne[1];
-        int c = massiveOne[2];
-        System.out.println(c + " ," + b + " ," + a);
+        int[] massiveOne = new int[]{1, 2, 3, 4, 5, 6};
+        for (int i = 5; i >= 0; i--) {
+            if (i == 0) {
+                System.out.println(massiveOne[i]);
+            } else {
+                System.out.print(massiveOne[i] + ", ");
+            }
+
+        }
 
         float[] masiveTwo = {1.57f, 7.654f, 9.986f};
-        float aTwo = masiveTwo[0];
-        float bTwo = masiveTwo[1];
-        float cTwo = masiveTwo[2];
-        System.out.println(masiveTwo[2] + ", " + masiveTwo[1] + ", " + masiveTwo[0]);
+        for (int i = masiveTwo.length - 1; i >= 0; i--) {
+            if (i == 0) {
+                System.out.println(masiveTwo[i]);
+            } else {
+                System.out.print(masiveTwo[i] + ", ");
+            }
 
+        }
 
         boolean[] massivethree = new boolean[5];
         massivethree[0] = true;
         massivethree[3] = false;
-        System.out.println(massivethree[2] + ", " + massivethree[1] + ", " + massivethree[0]);
-
+        for (int i = 4; i >= 0; i--) {
+            if (i != 0) {
+                System.out.print(massivethree[i] + ", ");
+            } else {
+                System.out.print(massivethree[i]);
+            }
+        }
     }
 
     public static void task4() {
 
-        //### 4 задача (Не решенно)
+        //### 4 задача
         //Пройдитесь по первому целочисленному массиву и все нечетные числа в нем сделайте четными (нужно прибавить 1).
         //Важно: код должен работать с любым целочисленным массивом, поэтому для решения задания вам нужно использовать циклы.
         //Распечатайте результат преобразования в консоль.
-//        int[] massiveOne = {16, 4, 8};
-        //k=2m – где k – четное число, m – любое целое число.
-//        int m = massiveOne[0];
-//        int k = 2;
-//        int a = (m / k);
-//        int z = a % 2;
-//        if (z != 0){
-//
-//            System.out.println(z + " ");
-//        }
+        int[] massiveOne = {16, 4, 8, 5, 23, 21345, 87346, 77, 44, 88};
 
-
-//        for (int i = 0; i < massiveOne.length; i++) {
-//                System.out.print(massiveOne[i] + 1 + " ");
-//        }
-
+        for (int i = 0; i < massiveOne.length; i++) { // проверяем весь массив с лева на право от 0 до конца
+            if (massiveOne[i] % 2 != 0) { //если в массиве при деление на 2 число не являеться 0 то
+                massiveOne[i] = massiveOne[i] + 1; // прибавить к этому  числу 1
+                System.out.println(massiveOne[i] + " ! не четные числа к которым прибавили 1");
+            } else {
+                System.out.println(massiveOne[i] + " ! четные числа к которым не чего не прибавляли");
+            }
+        }
+//        System.out.print(Arrays.toString(massiveOne));
     }
 }
 
